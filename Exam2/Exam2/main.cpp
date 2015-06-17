@@ -3,42 +3,9 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include <algorithm>
 #include <iomanip>
+#include "Runner.h"
 using namespace std;
-
-//class for the runner
-class Runner{
-private:
-    string firstname;
-    string lastname;
-    int pace;
-    
-public:
-    Runner(string first, string last, int pace){
-        firstname = first;
-        lastname = last;
-        this->pace = pace;
-    }
-    void set_firstname(string first){
-        firstname = first;
-    }
-    void set_lastname(string last){
-        lastname = last;
-    }
-    void set_pace(int Pace){
-        pace = Pace;
-    }
-    string get_firstname(){
-        return firstname;
-    }
-    string get_lastname(){
-        return lastname;
-    }
-    int get_pace(){
-        return pace;
-    }
-};
 
 int main(){
     //open the file of runners
@@ -60,7 +27,6 @@ int main(){
     }
     
     runners.close();
-    
     //sort the vector in ascending order (fastest pace is the first runner in the vector)
     for (int i = 0; i < runnerVector.size()-1; i++)
     {
